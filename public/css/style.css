@@ -1,0 +1,113 @@
+body{
+    background: #111111 url("../img/bg2.jpg") top  center no-repeat ;
+    background-size: 100%;
+}
+*{
+    color: #fff;
+}
+a{
+    color: #a6a6a6;
+}
+.jumbotron .container {
+    padding: 50px 0;
+}
+.disText{
+    display: none;
+}
+.alert {
+    display: none;
+}
+.jumbotron{
+    background: transparent;
+}
+.bg-con{
+    /*background: url("../img/111.jpg");*/
+}
+h4{
+    display: inline-block;
+    margin: 0 15px;
+}
+a:hover{
+    text-decoration: none;
+}
+
+
+.InforBox{
+    margin-top: 50px;
+}
+h3.text-muted{
+    color: #337ab7;
+}
+.friends-item{
+    background: #2E2E2E;
+    margin-top: 10px;
+}
+.friends-item img{
+
+}
+.personHead{
+    margin-bottom: -40px;
+}
+.personMood{
+    margin-top: 0;
+    margin-left: 1.5em;
+    padding-top: 0;
+}
+.moodList>.row .col-md-10{
+    /*border-bottom: 1px solid #eee;*/
+}
+.userinfor img{
+    width: 200px;
+    height: 200px;
+}
+.userinfor p{
+    line-height: 40px;
+}
+.updateInfo{
+    display: none;
+}
+.touxbox{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.touxbox .updTx{
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom:0;
+}
+.touxbox:hover .updTx{
+    display: block;
+}
+.updTx button{
+    width: 100%;
+}
+
+.moodList img{
+    width: 50px;
+    height: 50px;
+<<<<<<< HEAD
+}
+=======
+    border-radius: 50%;
+}
+.more {
+    margin-top: 50px;
+}
+.more .btn{
+    background: #2E2E2E;
+}
+.more .btn:hover{
+    color: #a6a6a6;
+}
+footer{
+    margin-top: 50px;
+}
+.input-group{
+    margin-top: 2em;
+}
+h3{
+    font-size: 2em;
+}
+>>>>>>> 36de58489f06e2dd86e3e3cb7c28a31e371f4b31

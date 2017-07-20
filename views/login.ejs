@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<% include header.ejs %>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad amet autem beatae culpa cupiditate delectus dolor ducimus earum laudantium molestiae neque possimus quia quis repudiandae velit voluptas voluptates voluptatibus, voluptatum.
+                </h3>
+            </div>
+            <div class="col-md-5">
+                <form enctype="multipart/form-data" method="post">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">用户名</span>
+                        <input type="text" class="form-control" id="username" placeholder="Username" name="username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon2">密&nbsp;&nbsp;&nbsp;码</span>
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" aria-describedby="basic-addon2">
+                    </div>
+
+                    <div class="input-group">
+                        <button type="button" class="btn btn-default " id="btn">登录</button>
+                    </div>
+                </form>
+                <div class="alert alert-danger" id="alert"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<footer>
+    <p class="text-center">&copy; 2017 Personal, ciyel.</p>
+</footer>
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

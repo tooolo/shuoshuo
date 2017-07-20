@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<% include header.ejs %>
+
+    <% include slider.ejs %>
+
+
+      <div class="container InforBox">
+          <div class="row ">
+              <div class="col-md-2 ">
+                  <div class="userinfor">
+                      <div class="row">
+                          <div class="touxbox">
+                              <% if(user[0].touxiang){ %>
+                                <img src="<%= user[0].touxiang %>" alt="">
+                              <% }else{ %>
+                              <img src="img/toux.jpg" alt="">
+                              <% } %>
+                              <% if(loginname == user[0].username){%>
+                              <div class="updTx text-center">
+                                  <!--<a href="">修改头像</a>-->
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                      修改头像
+                                  </button>
+                              </div>
+                              <% } %>
+
+                          </div>
+                      </div>
+                      <div class="row">
+                          <p>姓名：<%= user[0].username %></p>
+
+                      </div>
+                  </div>
+
+              </div>
+
+
+          <!--</div>-->
+      <!--</div>-->
+
+
+<<<<<<< HEAD
+    <div class="col-md-8 moodList">
+=======
+    <div class="col-md-8 moodList personMood">
+>>>>>>> 36de58489f06e2dd86e3e3cb7c28a31e371f4b31
+        <% for ( var i = 0; i < comment.length; i++){%>
+        <div class="row friends-item">
+            <div class="col-md-10 col-md-offset-1">
+
+                <h2>
+                    <% for(var k = 0; k < user.length; k++){
+                    if( user[k].username == comment[i].username){%>
+                    <img src="<%= user[k].touxiang %>" alt="">
+                    <% } }%>
+                    <a href="/personal:<%= comment[i].username %>"><%= comment[i].username %></a>
+                </h2>
+                <p><%= comment[i].content %> </p>
+                <p class="text-right"><%= comment[i].datetime %></p>
+
+                <% for(var j = 0; j < discuss.length; j++){ %>
+
+                <div class="row">
+                    <div class="col-md-12 ">
+
+                        <% if(discuss[j].commentId == comment[i]._id){ %>
+                        <p><h4>
+                            <% for(var k = 0; k < user.length; k++){
+                            if( user[k].username == discuss[j].username){%>
+                            <img src="<%= user[k].touxiang %>" alt="">
+                            <% } }%>
+                            <a href="/<%= discuss[j].username %>"><%= discuss[j].username %></a>:
+                        </h4><%= discuss[j].content %> </p>
+                        <p class="text-right"><%= discuss[j].datetime %></p>
+                        <% } %>
+
+                    </div>
+                </div>
+                <% } %>
+
+                <% if(isLogin){ %>
+
+
+
+                <p ><a href="javascript:void(0)" class="showDisText">评论</a></p>
+
+                <div class="form-group disText" >
+
+                    <textarea class="form-control" rows="3"></textarea>
+                    <p style="float: right; margin-top: 5px"><button class="btn btn-primary punishComment" data-commentid="<% comment[i]._id%>" >发表</button></p>
+                </div>
+
+                <div class="alert alert-danger" id="<%= comment[i]._id %>"></div>
+                <% } %>
+            </div>
+
+        </div>
+
+
+
+        <% } %>
+        <% if(total >6){%>
+        <div class="row">
+            <nav aria-label="..." class="col-sm-offset-1 col-sm-11">
+                <ul class="pagination">
+                    <% for ( var i = 1; i <= pageNum; i++){ %>
+                    <li><a href="/<%=user[0].username %>?page=<%= i %>"><%= i %></a></li>
+
+                    <% } %>
+                </ul>
+            </nav>
+        </div>
+        <% } %>
+    </div>
+          </div>
+      </div>
+    <footer class="footer">
+        <p class="text-center">&copy; 2017 Personal, ciyel.</p>
+    </footer>
+
+</div> <!-- /container -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="/doUpdatePic" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">用户头像</h4>
+                </div>
+                <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="">选择图片：</label>
+                            <input id="filename" name="filename" type="file" >
+                        </div>
+                    <div class="alert alert-danger" id="updPicError"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" id="updatePic" class="btn btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/punish.js"></script>
+</html>
